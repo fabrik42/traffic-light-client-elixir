@@ -1,0 +1,25 @@
+* Elixir Traffic Light Client
+** Deployment
+Note that all required environment variables are automatically set with [[https://direnv.net/][direnv]] and a ~.env~ file.
+
+*** Initial Deployment (or Offline Deployment)
+#+begin_src
+mix deps.get
+mix firmware
+mix firmware.burn
+#+end_src
+*** Follow up deployments
+#+begin_src
+mix firmware
+./upload.sh
+#+end_src
+** SSH into running client
+Note that the client has to be in the same network ;)
+
+#+begin_src sh
+ssh nerves.local
+#+end_src
+** Check outside connections from iex
+#+begin_src elixir
+tping 'google.com'
+#+end_src
