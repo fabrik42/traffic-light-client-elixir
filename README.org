@@ -3,13 +3,13 @@
 Note that all required environment variables are automatically set with [[https://direnv.net/][direnv]] and a ~.env~ file.
 
 *** Initial Deployment (or Offline Deployment)
-#+begin_src
+#+begin_src sh
 mix deps.get
 mix firmware
 mix firmware.burn
 #+end_src
 *** Follow up deployments
-#+begin_src
+#+begin_src sh
 mix firmware
 ./upload.sh
 #+end_src
@@ -23,3 +23,9 @@ ssh nerves.local
 #+begin_src elixir
 tping 'google.com'
 #+end_src
+** More Information
+- [[https://hexdocs.pm/nerves/getting-started.html#connecting-to-your-nerves-target][Nerves getting started]]
+- [[https://hexdocs.pm/nerves_init_gadget/readme.html#configuration][Tutorial nerves_init_gadget]]
+- [[https://hexdocs.pm/nerves_network/readme.html#installation-and-setup][Network wlan setup]]
+- [[https://github.com/nerves-project/nerves_examples/blob/master/hello_gpio/lib/hello_gpio.ex][Nerves GPIO example]]
+- [[https://github.com/elixir-circuits/circuits_gpio][Circuits GPIO lib]]
