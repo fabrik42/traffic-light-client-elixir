@@ -9,10 +9,4 @@ defmodule TrafficLightClient.LedOutputTest do
 
     assert output.pin == 23
   end
-
-  test "opens a pin" do
-    _output = LedOutput.new(23)
-
-    assert Circuits.GPIO.info().pins_open == 1
-  end
 end
