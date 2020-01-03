@@ -15,6 +15,7 @@ defmodule TrafficLightClient.Application do
         # Children for all targets
         # Starts a worker by calling: TrafficLightClient.Worker.start_link(arg)
         # {TrafficLightClient.Worker, arg},
+        TrafficLightClient.Updater
       ] ++ children(target())
 
     Supervisor.start_link(children, opts)

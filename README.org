@@ -13,15 +13,34 @@ mix firmware.burn
 mix firmware
 ./upload.sh
 #+end_src
-** SSH into running client
+** Debugging and introspection
+*** SSH into running client
 Note that the client has to be in the same network ;)
 
 #+begin_src sh
 ssh nerves.local
 #+end_src
-** Check outside connections from iex
+*** Check outside connections from iex
 #+begin_src elixir
 tping 'google.com'
+#+end_src
+*** Get network information
+#+begin_src elixir
+Nerves.Network.status("wlan0")
+#+end_src
+*** Looking into the GenServer that updates the traffic light
+First, you have to enable debugging of the genserver.
+
+#+begin_src elixir
+TrafficLightClient.Updater.enable_debug
+#+end_src
+
+Then you can use the following statements to introspect the process and look at the state.
+
+#+begin_src elixir
+:sys.get_status(UpdaterLink)
+:sys.statistics(UpdaterLink, :get)
+:sys.get_state(UpdaterLink)
 #+end_src
 ** More Information
 - [[https://hexdocs.pm/nerves/getting-started.html#connecting-to-your-nerves-target][Nerves getting started]]
