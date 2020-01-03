@@ -44,6 +44,11 @@ defmodule TrafficLightClient.MixProject do
       {:ring_logger, "~> 0.6"},
       {:toolshed, "~> 0.2"},
       {:circuits_gpio, "~> 0.4"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.6"},
+
+      # Dependencies for test environment
+      {:exvcr, "~> 0.10", only: :test},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},

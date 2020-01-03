@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://traffic-light-server.herokuapp.com/lights"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"mode\":\"ci\",\"red\":true,\"yellow\":false,\"green\":false}",
+      "headers": {
+        "Server": "Cowboy",
+        "Connection": "keep-alive",
+        "X-Powered-By": "Express",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "53",
+        "Etag": "\"1801139354\"",
+        "Date": "Fri, 03 Jan 2020 09:53:26 GMT",
+        "Via": "1.1 vegur"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
