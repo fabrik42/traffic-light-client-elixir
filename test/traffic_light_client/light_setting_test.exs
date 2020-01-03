@@ -12,6 +12,15 @@ defmodule TrafficLightClient.LightSettingTest do
     assert light_setting.green == false
   end
 
+  test "light_diff with different settings (from nil to green)" do
+    old_setting = %LightSetting{mode: nil, red: nil, yellow: nil, green: nil}
+    new_setting = %LightSetting{mode: "public", red: false, yellow: false, green: true}
+
+    diff = LightSetting.light_diff(old_setting, new_setting)
+
+    assert diff == [{:green, true}, {:yellow, false}, {:red, false}]
+  end
+
   test "light_diff with different settings (from red to yellow)" do
     old_setting = %LightSetting{mode: "ci", red: true, yellow: false, green: false}
     new_setting = %LightSetting{mode: "public", red: false, yellow: true, green: false}

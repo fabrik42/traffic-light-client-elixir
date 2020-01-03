@@ -4,10 +4,12 @@ defmodule TrafficLightClient.LightSetting do
   def light_diff(old, new) do
     [:red, :yellow, :green]
     |> Enum.reduce([], fn color, acc ->
-      if Map.get(old, color) == Map.get(new, color) do
+      color_state = &Map.get(&1, color)
+
+      if color_state.(old) == color_state.(new) do
         acc
       else
-        [{color, Map.get(new, color)} | acc]
+        [{color, color_state.(new)} | acc]
       end
     end)
   end
