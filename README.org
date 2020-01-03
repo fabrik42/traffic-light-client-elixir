@@ -1,5 +1,9 @@
 * Traffic Light client for the Raspberry PI
-This is an Elixir client that corresponds to our [[https://github.com/fabrik42/traffic-light-server][Traffic Light Server]]and controls the lights of a modded traffic light, using three GPIO pins of the Raspberry PI.
+This is an Elixir client that corresponds to our [[https://github.com/fabrik42/traffic-light-server][Traffic Light Server]] and controls the lights of a modded traffic light, using three GPIO pins of the Raspberry PI.
+
+In order to make the deployment and service management on the device as easy as possible I decided to try out the [[https://nerves-project.org/][Nerves Project]].
+
+It replaces an old [[https://github.com/fabrik42/traffic-light-client-raspberry][Ruby version of the client]] that was running as a service on a Raspian installation.
 ** Deployment
 Note that there are some environment variables required when building a release.
 
