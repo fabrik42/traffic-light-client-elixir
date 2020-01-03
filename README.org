@@ -1,7 +1,8 @@
 * Elixir Traffic Light Client
 ** Deployment
-Note that all required environment variables are automatically set with [[https://direnv.net/][direnv]] and a ~.env~ file.
+Note that there are some environment variables required when building a release.
 
+I set them automatically with [[https://direnv.net/][direnv]] and a ~.env~ file. See the ~.env_example~ file for what is needed.
 *** Initial Deployment (or Offline Deployment)
 #+begin_src sh
 mix deps.get
