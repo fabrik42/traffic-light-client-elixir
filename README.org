@@ -6,7 +6,7 @@ In order to make the deployment and service management on the device as easy as 
 
 The real world traffic light consists of the lights itself (in the commonly known casing) that are controlled by a custom made shield for the Raspberry PI.
 
-#+html: <p align="center"> <img width="350" height="350" src="https://raw.githubusercontent.com/fabrik42/traffic-light-client-elixir/master/assets/doc/shield.jpeg"></p>
+#+html: <p align="center"> <img width="306" height="408" src="https://raw.githubusercontent.com/fabrik42/traffic-light-client-elixir/master/assets/doc/shield.jpg"></p>
 
 This project replaces an old [[https://github.com/fabrik42/traffic-light-client-raspberry][Ruby version of the client]] that was running as a service on a Raspian installation.
 ** Deployment
@@ -53,6 +53,19 @@ Then you can use the following statements to introspect the process and look at 
 :sys.statistics(UpdaterLink, :get)
 :sys.get_state(UpdaterLink)
 #+end_src
+** A little bit of Traffic Light history
+This traffic light project exists roughly since 2011. I use this side project as a form of recreational programming and joyful overengineering.
+
+The software/hardware project has seen many stages:
+- Connected to a Synology NAS with a self-soldered [[https://www.velleman.eu/products/view/?country=be&lang=de&id=351346][Velleman K8055]] USB experimentation board.
+- Connected to a Raspberry PI, running a [[https://github.com/fabrik42/traffic-light-client-raspberry][Ruby]] script locally, [[https://github.com/fabrik42/traffic-light-server][node.js]] on the server side.
+- Wiring mostly replaced by a [[https://raw.githubusercontent.com/fabrik42/traffic-light-client-elixir/master/assets/doc/shield.jpg][custom etched circuit board]] - a Raspberry shield built only for the purpose of changing the traffic light (and debugging it at home without disassembling the whole traffic light).
+- Replacement of the Raspbian/Ruby client with [[https://github.com/fabrik42/traffic-light-client-elixir][Elixir and Nerves]].
+- Replacement of the node.js server with [[https://github.com/fabrik42/traffic-light-server-elixir][Elixir and Phoenix]].
+
+The physical traffic light has been set up at two companies and four offices, motivating me and many others to keep your CI green and clean.
+
+It also had [[https://traffic-light.tumblr.com/][its own dedicated blog]], showing the appearances of the traffic light in different articles and videos as it was a welcome guest in German media.
 ** More Information
 - [[https://hexdocs.pm/nerves/getting-started.html#connecting-to-your-nerves-target][Nerves getting started]]
 - [[https://hexdocs.pm/nerves_init_gadget/readme.html#configuration][Tutorial nerves_init_gadget]]
