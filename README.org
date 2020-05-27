@@ -54,7 +54,7 @@ Then you can use the following statements to introspect the process and look at 
 :sys.get_state(UpdaterLink)
 #+end_src
 ** A little bit of Traffic Light history
-This traffic light project exists roughly since 2011. I use this side project as a form of recreational programming and joyful overengineering.
+This traffic light project exists since 2010. I use this side project as a form of recreational programming and joyful overengineering.
 
 The software/hardware project has seen many stages:
 - Connected to a Synology NAS with a self-soldered [[https://www.velleman.eu/products/view/?country=be&lang=de&id=351346][Velleman K8055]] USB experimentation board.
